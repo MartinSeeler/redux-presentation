@@ -1,0 +1,79 @@
+{
+  "extends": "xo",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true
+  },
+  "globals": {
+    "document": true,
+    "window": true,
+    "location": true,
+    "fetch": true
+  },
+  "plugins": [
+    "fp",
+    "react",
+    "ava"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "max-params": ["error", 5],
+    "camelcase": "off",
+    "fp/no-class": "error",
+    "fp/no-loops": "error",
+    "fp/no-mutating-assign": "error",
+    "fp/no-mutating-methods": "off",
+    "fp/no-get-set": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/react-in-jsx-scope": 1,
+    "fp/no-mutation": [
+      "error",
+      {
+        "commonjs": true
+      }
+    ],
+    "no-var": "error",
+    "ava/assertion-arguments": "error",
+    "ava/max-asserts": [
+      "off",
+      5
+    ],
+    "ava/no-async-fn-without-await": "error",
+    "ava/no-cb-test": "off",
+    "ava/no-duplicate-modifiers": "error",
+    "ava/no-identical-title": "error",
+    "ava/no-ignored-test-files": "error",
+    "ava/no-invalid-end": "error",
+    "ava/no-nested-tests": "error",
+    "ava/no-only-test": "error",
+    "ava/no-skip-assert": "error",
+    "ava/no-skip-test": "error",
+    "ava/no-statement-after-end": "error",
+    "ava/no-todo-implementation": "error",
+    "ava/no-todo-test": "warn",
+    "ava/no-unknown-modifiers": "error",
+    "ava/prefer-async-await": "error",
+    "ava/prefer-power-assert": "off",
+    "ava/test-ended": "error",
+    "ava/test-title": [
+      "error",
+      "if-multiple"
+    ],
+    "ava/use-t-well": "error",
+    "ava/use-t": "error",
+    "ava/use-test": "error",
+    "ava/use-true-false": "error"
+  }
+}
