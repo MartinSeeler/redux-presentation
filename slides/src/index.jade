@@ -1,0 +1,165 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Redux
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section
+        h2 Introduction to Redux
+        h3
+          a(href='https://twitter.com/Chasmo90') @Chasmo90
+        img.avatar.avatar--small(src='images/profile.jpg')
+
+      section
+        h3 What is Redux?
+        ul.bullet
+          li Predictable state management
+          li using actions
+          li and reducers
+
+      section.gif.gif--noidea
+      
+      section.gif.gif--yes
+        h2 EVERYONE KNOWS MVC
+
+      section
+        h3 Instead of ...
+        ul.bullet
+          li Models
+          li Views
+          li Controllers
+
+      section
+        h3 We now have ...
+        ul.bullet
+          li Actions
+          li Reducers
+          li Components
+          li A Store
+
+      section.png.png--mvc    
+      section.png.png--lifecylce    
+
+      section
+        h3 Source of Problems in MVC
+        ul.bullet
+          li bidirectional communication
+          li one change can loop back 
+          li have cascading effects
+          li hard to reason about data flow
+
+      section
+        h3 Actions
+        ul.bullet
+          li simple objects
+          li with a type property
+          li and optional payload
+
+      section
+        h2 Example Action
+        pre
+          code.language-javascript.
+            {
+              type: 'INCREMENT',
+              amount: 1
+            }
+
+      section.gif.gif--demo
+        h1 DEMO      
+
+      section
+        h3 A <i>c</i>-Reducer
+        p is a <b>Semigroup</b> with a canonical mapping from <i>c</i> to the <b>Semigroup</b>.
+
+      section
+        h3 A Reducer is
+        ul.bullet
+          li a <i>pure</i> function
+          li which takes the <i>previous state</i>
+          li and the <i>current action</i>
+          li to return the <i>new state</i>
+
+      section
+        h2 Reducer Definition
+        pre
+          code.language-javascript.
+            (previousState, action) => newState    
+
+      section
+        h2 Example Reducer
+        pre
+          code.language-javascript.
+            const reducer = (state = 0, action) => {
+              switch (action.type) {
+                case types.INCREMENT:
+                  return state + 1;
+                default:
+                  return state;
+              }
+            };
+
+      section.gif.gif--demo
+        h1 DEMO      
+
+      section
+        h3 Components
+        ul.bullet
+          li the visible UI
+          li not necessarily React
+
+      section
+        h3 Presentational Components
+        ul.bullet
+          li how things look
+          li no dependencies on the rest of the app
+          li don’t specify how the data is loaded or mutated
+          li receive data and callbacks exclusively via props
+          li usually stateless (maybe some ui state)
+
+      section
+        h3 Container Components
+        ul.bullet
+          li how things work
+          li provide the data and behavior to presentational components
+          li provide state fields as props
+          li provide redux actions as props
+
+      section
+        h3 Benefits of separation
+        ul.bullet
+          li separation of concerns (understand your UI)
+          li reusability
+
+      section.gif.gif--demo
+        h1 DEMO      
+      
+      section
+        h3 Con's
+        ul.bullet
+          li Handling Side Effects
+          li Code Structuring
+      
+      section
+        h3 Pro's
+        ul.bullet
+          li Separation of concerns
+          li Testability
+          li Server Side Rendering
+          li Reasoning about data flow
+          li Reusability of logic
+
+      section.gif.gif--trialerror
+        h2 TRY IT YOURSELF
+      section
+        h2 Q&A
+      section.gif.gif--clap
+        h2 Thanks!
+
+    script(src='build/build.js')
